@@ -8,7 +8,7 @@ if [ ! -d Discord/ ]; then
     exit 1
 fi
 
-killall discord
+killall discord > /dev/null 2>&1 &
 rm -rf ~/.discord
 sudo rm -rf /usr/bin/discord
 
