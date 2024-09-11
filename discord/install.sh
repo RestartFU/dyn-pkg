@@ -12,5 +12,8 @@ killall Discord > /dev/null 2>&1 &
 rm -rf ~/.discord
 sudo rm -rf /usr/bin/discord
 
+discord_path=$(realpath ~/.discord/Discord)
+
 mv Discord ~/.discord
-sudo ln -s $(realpath ~/.discord/Discord) /usr/bin/discord
+sudo ln -s $discord_path /usr/bin/discord
+echo "symlink created for $discord_path to /usr/bin/discord"
