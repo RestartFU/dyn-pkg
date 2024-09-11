@@ -9,10 +9,10 @@ if [ ! -d Discord/ ]; then
 fi
 
 killall Discord > /dev/null 2>&1 &
-rm -rf ~/.discord
+rm -rf /usr/local/discord
 sudo rm -rf /usr/bin/discord
 
-mv Discord ~/.discord
-discord_path=$(realpath ~/.discord/Discord)
+mv Discord /usr/local/discord
+discord_path=$(realpath /usr/local/discord/Discord)
 sudo ln -s $discord_path /usr/bin/discord
 echo "symlink created for $discord_path to /usr/bin/discord"
