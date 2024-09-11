@@ -6,8 +6,12 @@ install() {
     curl -o v.zip $download_url
     unzip v.zip
     rm -rf v.zip
+
+    remove
+
     sudo mv v /usr/local/v
     sudo ln -s /usr/local/v/v /usr/bin/v
+    sudo v /usr/local/v/cmd/tools/vrepl.v
 }
 
 update() {
