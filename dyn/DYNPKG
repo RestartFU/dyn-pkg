@@ -4,7 +4,7 @@ install() {
     curl -o dyn $download_url
     chmod +x dyn
     sudo mv dyn /usr/bin/dyn
-    echo "update dyn to $(dyn version)"
+    echo "updated dyn to $(dyn version)"
 }
 
 update() {
