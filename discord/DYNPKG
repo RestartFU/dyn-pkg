@@ -1,4 +1,4 @@
-install {
+install() {
     download_url=$(curl -w "%{redirect_url}" -o /dev/null -s "https://discord.com/api/download?platform=linux&format=tar.gz")
     curl -o discord.tar.gz $download_url
     tar -xf discord.tar.gz
@@ -19,11 +19,11 @@ install {
     echo "symlink created for $discord_path to /usr/bin/discord"
 }
 
-update {
+update() {
     install
 }
 
-remove {
+remove() {
     killall Discord > /dev/null 2>&1 &
     rm -rf /usr/local/discord
     sudo rm -rf /usr/bin/discord
