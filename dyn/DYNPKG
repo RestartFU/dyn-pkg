@@ -1,3 +1,5 @@
+maintainers=(RestartFU)
+
 install() {
     redirect=$(curl -w "%{redirect_url}" -o /dev/null -s "https://github.com/RestartFU/dyn/releases/latest/download/dyn")
     download_url=$(curl -w "%{redirect_url}" -o /dev/null -s $redirect)

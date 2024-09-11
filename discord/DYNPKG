@@ -1,3 +1,5 @@
+maintainers=(RestartFU)
+
 install() {
     download_url=$(curl -w "%{redirect_url}" -o /dev/null -s "https://discord.com/api/download?platform=linux&format=tar.gz")
     curl -o discord.tar.gz $download_url
