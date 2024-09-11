@@ -1,0 +1,25 @@
+maintainers="RestartFU"
+
+install() {
+    go_version=$(curl -Ls https://go.dev/VERSION?m=text | head -n 1)
+    download_url="https://go.dev/dl/${go_version}.linux-amd64.tar.gz"
+    wget -O go.tar.gz $download_url
+    tar -xf go.tar.gz
+
+    remove
+
+    sudo mv go /usr/local/go
+    sudo ln -s /usr/local/go/bin/go /usr/bin/go
+    sudo ln -s /usr/local/go/bin/gofmt /usr/bin/gofmt
+    go version
+}
+
+update() {
+    install
+}
+
+remove() {
+    sudo rm -rf /usr/local/go
+    sudo rm -rf /usr/bin/go
+    sudo rm -rf /usr/bin/gofmt
+}
