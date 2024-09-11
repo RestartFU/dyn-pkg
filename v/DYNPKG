@@ -15,7 +15,7 @@ install() {
 }
 
 update() {
-    install
+    sudo v up
 }
 
 remove() {
