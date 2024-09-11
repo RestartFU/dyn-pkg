@@ -11,9 +11,7 @@ install() {
         exit 1
     fi
 
-    killall Discord > /dev/null 2>&1 &
-    rm -rf /usr/local/discord
-    sudo rm -rf /usr/bin/discord
+    remove
 
     mv Discord /usr/local/discord
     discord_path=$(realpath /usr/local/discord/Discord)
