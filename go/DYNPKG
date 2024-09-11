@@ -5,7 +5,7 @@ install() {
     download_url="https://go.dev/dl/${go_version}.linux-amd64.tar.gz"
     wget -O go.tar.gz $download_url
     tar -xf go.tar.gz
-    rm -rf go.tar.xf
+    rm -rf go.tar.gz
 
     remove
 
