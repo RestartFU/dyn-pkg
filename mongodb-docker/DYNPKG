@@ -1,0 +1,18 @@
+maintainers="RestartFU"
+
+install() {
+    git clone https://github.com/restartfu/mongodb-docker
+
+    remove
+    mv mongodb-docker /usr/local/mongodb-docker
+    sudo ln -s /usr/local/mongodb-docker/bin/mongodb-docker /usr/bin/mongodb-docker
+}
+
+update() {
+    install
+}
+
+remove() {
+    sudo rm -rf /usr/local/mongodb-docker
+    sudo rm -rf /usr/bin/mongodb-docker
+}
